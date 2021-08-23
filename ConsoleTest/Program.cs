@@ -18,7 +18,7 @@ namespace ConsoleTest
         private static void CategoryGetAllTest()
         {
             CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var category in categoryManager.GetAll())
+            foreach (var category in categoryManager.GetAll().Data)
             {
                 Console.WriteLine(category.CategoryName);
             }
@@ -42,7 +42,7 @@ namespace ConsoleTest
             {
                 foreach (var product in result.Data)
                 {
-                    Console.WriteLine(product.ProductName + " / " + product.CategoryName + " / ");
+                    Console.WriteLine(product.ProductName + " / " + product.CategoryName + " / " + product.UnitsInStock);
 
                 }
             }
